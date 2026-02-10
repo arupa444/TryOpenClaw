@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LinkedIn Post Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>LinkedIn Post Manager</h1>
+
+    <!-- Section for creating posts -->
+    <h2>Create a New Post</h2>
+    <form action="/create_post" method="post">
+        <textarea name="post_content" rows="4" cols="50" placeholder="What's on your mind?"></textarea><br>
+        <button type="submit">Create Post</button>
+    </form>
+
+    <!-- Section for displaying posts -->
+    <h2>Your Recent Posts</h2>
+    <div id="posts-container">
+        {% if posts %}
+            {% for post in posts %}
+                <div class="post">
+                    <p>{{ post.text }}</p>
+                    <!-- Add more details if available, like author, timestamp -->
+                    <small>Posted by {{ post.author_name }} on {{ post.timestamp }}</small>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No posts found or failed to fetch posts.</p>
+        {% endif %}
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
