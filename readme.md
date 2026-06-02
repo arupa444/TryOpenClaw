@@ -6,4 +6,5 @@ It currently contains the 'myApp' directory, which was added from the user's des
 
 
 HDD_HYD_ROOT=E:/Atrisol_D2/hydPoleDetection
+
 HDD_PHASE1_ROOT=E:/Atrisol_D2/phase1
